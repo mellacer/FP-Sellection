@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px;
+    gap: 40%;
+    z-index: 2;
+}
+
+header img {
+    width: 250px;
+}
+
+header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    cursor: pointer;
+}
+
+section {
+    background-image: radial-gradient(#405af1, #1c096e);
+    height: 100vh;
+    position: relative;
+}
+
+section .list {
+    width: 70vw;
+    height: 100%;
+    margin: auto;
+    position: relative;
+
+}
+
+section .list::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 50%;
+    border-top: 1px solid #fff;
+} 
+
+section .list .item {
+    position: absolute;
+    inset: 0;
+}
+
+section .list .item .car-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+}
+
+section .list .item .car-img img {
+    width: 80%;
+    transform: rotate(-20deg);
+}
+
+section .list .item .content {
+    position: absolute;
+    right: -35px;
+    width: 70%;
+    height: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 1px;
+}
+
+section .list .item .content .car-information {
+    font-weight: bold;
+}
+
+section .list .item .content h2 {
+    font-size: 4em;
+    line-height: 1em;
+}
+
+section .list .item .content .description {
+    color: #d9d9d9;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+}
+
+section .list .item .content .information {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #791fd3;
+    background-color: #beff1b;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section .list .item .content button {
+    background-color: #4f0d85;
+    color: #d9d9d9;
+    border-radius: 40%;
+    width: 100px;
+    height: 350px;
+}
+
+section .arrow{
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
+
+section .arrow button {
+    top: 60%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+section .arrow button:nth-child(1) img {
+    transform: scale(-1);
+}
+
+section .arrow button img {
+    width: 20px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+section .arrow button:hover {
+    background-color: #4f0d85;
+}
+
+section .list .item {
+    transform: translateX(100vw);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+section .list .item .car-img img {
+    transform: rotate(0);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+section .list .item .content .car-information,
+section .list .item .content h2,
+section .list .item .content .description,
+section .list .item .content .information {
+    transform: translateX(200vw);
+    transition: 0.7s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+section .list .item .content h2 {
+    transition-delay: 0.5s;
+}
+
+section .list .item .content .description {
+    transition-delay: 0.7s;
+}
+
+section .list .item .content .information {
+    transition-delay: 0.9s;
+}
+
+section .list .item.active {
+    transform: translateX(0);
+    transition: 0.5s;
+    opacity: 1;
+}
+
+section .list .item.active .car-img img {
+    transform: rotate(-20deg);
+}
+
+section .list .item.active .content .car-information,
+section .list .item.active .content h2,
+section .list .item.active .content .description,
+section .list .item.active .content .information {
+    transform: translateX(0);
+    opacity: 1;
+}
+
